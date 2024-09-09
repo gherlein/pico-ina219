@@ -28,6 +28,8 @@ pico_add_extra_outputs(main)
 
 target_link_libraries(main
 	pico_stdlib
+	hardware_i2c 
+	pico_multicore 
 	# other libs as needed
 )
 
