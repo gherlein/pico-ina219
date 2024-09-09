@@ -21,15 +21,19 @@ pico_enable_stdio_uart(main 1)
 target_include_directories(main PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
         include
-        # add other folders as needed
+        pico-i2clib/include
 )
+add_subdirectory(pico-i2clib)
 
 pico_add_extra_outputs(main)
 
 target_link_libraries(main
 	pico_stdlib
 	hardware_i2c 
-	pico_multicore 
+	pico_multicore
+    hardware_i2c
+    hardware_gpio
+    pico-i2clib
 	# other libs as needed
 )
 
