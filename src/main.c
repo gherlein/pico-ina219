@@ -75,6 +75,8 @@ int main() {
     printf("Starting...\n");
     //local_i2c_init();
     pico_init_i2c(i2c, 100 * 1000, 16, 17);
+    void pico_scan_i2c(i2c);
+    
     ina219_init();
     ina219_calibrate(0.1, 3.2); // Calibrate for 0.1 Ohm shunt resistor and 3.2A max expected current
 
